@@ -2261,4 +2261,13 @@ export default {
   'Your sports watch, calling you back.': 'ساعت ورزشیتان، کهتان را می‌خواند.',
   'Coach wants you back on the bar.': 'کوچ می‌خواهد برگردید روی هالتر.',
   'Gentle, for headphones or a quiet room.': 'ملایم، برای هدفون یا یک اتاق آرام.',
+  'Home & Gym': 'خانه و باشگاه',
+  'Gym only': 'فقط باشگاه',
+  'Welcome to Delara!': 'به دلارا خوش آمدید!',
+  'Build my own plan': 'ساخت برنامه خودم',
+  'Tip: You can also browse 5600+ exercises in the Library tab.': 'نکته: می‌توانید بیش از ۵۶۰۰ حرکت را در تب حرکات مرور کنید.',
+  'How to': 'روش انجام',
+  'instructions in English': 'دستورالعمل به انگلیسی',
+  'Suggest a fix for this exercise': 'پیشنهاد اصلاح این حرکت',
+
 }

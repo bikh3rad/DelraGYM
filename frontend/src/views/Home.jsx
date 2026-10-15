@@ -176,14 +176,19 @@ export default function Home() {
     )}
 
     {!S.routines.length && !S.active && (
-      <div className="card">
-        <div className="row" style={{ gap: 10, marginBottom: 6 }}>
-          <span className="lrow-i"><Icon name="calendar" /></span>
-          <div className="big" style={{ fontSize: 22 }}>{t('Welcome!')}</div>
+      <div className="card" style={{ borderLeft: '4px solid var(--acc)' }}>
+        <div className="row" style={{ gap: 10, marginBottom: 8 }}>
+          <span className="lrow-i" style={{ background: 'var(--acc)', color: 'var(--on-acc)' }}><Icon name="rocket" /></span>
+          <div className="big" style={{ fontSize: 22 }}>{t('Welcome to Delara!')}</div>
         </div>
-        <div className="muted small" style={{ marginBottom: 12 }}>{t('Set up your weekly routine to get going, or grab a ready-made starter plan.')}</div>
-        <Button variant="primary" icon="clipboard" onClick={starterPlanSheet}>{t('Load starter plan')}</Button>
-        <div style={{ height: 8 }} /><Button onClick={() => nav('/plan')}>{t('Build my own plan')}</Button>
+        <div className="muted" style={{ marginBottom: 14, lineHeight: 1.5 }}>{t('You don\u2019t have a workout plan yet. Start with a ready-made plan or build your own \u2014 it only takes a minute.')}</div>
+        <Button variant="primary" icon="clipboard" onClick={starterPlanSheet} style={{ marginBottom: 8 }}>{t('Load starter plan')}</Button>
+        <Button variant="tinted" icon="plus" onClick={() => nav('/plan')}>{t('Build my own plan')}</Button>
+        <div style={{ height: 10 }} />
+        <div className="small dim row" style={{ gap: 6, justifyContent: 'center' }}>
+          <Icon name="lightbulb" style={{ fontSize: 14 }} />
+          {t('Tip: You can also browse 5600+ exercises in the Library tab.')}
+        </div>
       </div>
     )}
 

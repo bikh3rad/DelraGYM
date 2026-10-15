@@ -648,6 +648,7 @@ body.chips-dragging *{cursor:inherit}
 .exnote{
   background:var(--surface);border-radius:var(--r);padding:13px 15px;
   line-height:1.45;white-space:pre-wrap;font-size:15px;margin-bottom:10px;color:var(--label-2);
+  overflow-wrap:break-word;word-wrap:break-word;word-break:break-word;
 }
 
 /* --- search field --- */
@@ -1733,8 +1734,10 @@ body.no-tabbar.resting #toast{bottom:calc(100px + var(--sab))}
 .steps-list{
   padding-inline-start:18px;color:var(--label-2);font-size:15px;line-height:1.5;
   display:flex;flex-direction:column;gap:9px;
+  overflow-wrap:break-word;word-wrap:break-word;
 }
 .steps-list::marker{color:var(--label-3)}
+.steps-list li{overflow-wrap:break-word;word-wrap:break-word;}
 
 /* --- month calendar --- */
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:10px}

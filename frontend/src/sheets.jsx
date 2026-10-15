@@ -948,6 +948,10 @@ const trainedBy = ex => { const weights = muscleWeightsOf(ex); return slug => we
 // The detail page's tags: body part, main muscles, equipment, then up to three helpers. A word
 // says once what it says: the body part "Chest" and the main muscle "Chest" of a bench press
 // were two tags (QA 10-06), and a helper never repeats a main muscle.
+// Delara adds home/gym tags.
+import exerciseTags from './lib/exercise-tags.json'
+const exTagsFor = id => exerciseTags[id] || ['home', 'gym']
+
 export function detailTags(ex) {
   const seen = new Set()
   const out = []
@@ -962,6 +966,13 @@ export function detailTags(ex) {
   if (ex.bp === 'cardio') add(t(MUSCLE_NAME['cardiovascular system']), { icon: 'figureStrength' })
   else for (const s of (ex.primaries?.length ? ex.primaries : (ex.tg ? [ex.tg] : [])).filter(trainedBy(ex))) add(t(MUSCLE_NAME[s] || s), { icon: 'figureStrength' })
   add(t(ex.eq), { icon: 'kettlebell' })
+  // Home/gym tags — Delara
+  const tags = exTagsFor(ex.id)
+  if (tags.includes('home') && tags.includes('gym')) {
+    add(t('Home & Gym'), { icon: 'home', homeGym: true })
+  } else if (tags.includes('gym')) {
+    add(t('Gym only'), { icon: 'dumbbell', gymOnly: true })
+  }
   let helpers = 0
   for (const s of (ex.secondaries?.length ? ex.secondaries : smOf(ex)).filter(trainedBy(ex))) {
     if (helpers >= 3) break
